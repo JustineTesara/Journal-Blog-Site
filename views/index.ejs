@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>My Journal Site</title>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <div class="post-container">
+      <% if (posts.length === 0) { %>
+      <div class="post-card">
+        <h2>Welcome to Your Journal</h2>
+        <div class="post-meta">
+          <span><i class="fas fa-user"></i> Journal Admin</span>
+          <span
+            ><i class="fas fa-calendar"></i> <%= new Date().toLocaleDateString()
+            %></span
+          >
+        </div>
+        <p>
+          Welcome to your personal journal blog! Start by creating your first
+          journal entry.
+        </p>
+      </div>
+      <% } else { %> <% posts.forEach((post, index) => { %>
+      <div class="post-card">
+        <h2><%= post.subject %></h2>
+
+        <div class="post-meta">
+          <span><i class="fas fa-user"></i> <%= post.author %></span>
+          <span><i class="fas fa-calendar"></i> <%= post.date %></span>
+        </div>
+
+        <p><%= post.content %></p>
+
+        <form
+          action="/delete/<%= index %>"
+          method="POST"
+          style="display: inline"
+        >
+          <button type="submit" class="delete-btn">
+            <i class="fas fa-trash"></i>
+          </button>
+        </form>
+        <form action="/edit/<%= index %>" method="GET" style="display: inline">
+          <button type="submit" class="edit-btn">
+            <i class="fas fa-pen"></i>
+          </button>
+        </form>
+      </div>
+      <% }) %> <% } %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

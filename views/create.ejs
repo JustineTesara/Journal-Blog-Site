@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Create a Post</title>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <div class="post-container">
+      <div class="post-card">
+        <!-- Create a post here -->
+        <h2>✍️ Create New Journal Entry</h2>
+        <a href="/" class="back-button">⬅ Back</a>
+        <form action="/create" method="POST" class="journal-card">
+          <label for="authorname">Author Name</label>
+          <input type="text" name="authorname" placeholder="Enter your name" />
+          <label for="subject">Subject/Title</label>
+          <input
+            type="text"
+            name="subject"
+            placeholder="What's on your mind today?"
+          />
+          <label for="content">Content</label>
+          <input
+            type="text"
+            name="content"
+            placeholder="Share your thoughts, experiences, or reflections..."
+          />
+
+          <button type="submit" class="publish-button">Publish</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
