@@ -11,6 +11,7 @@ This project is built using **Node.js**, **Express.js**, **EJS**, and **CSS3**.
 - Publish and display posts on the landing page
 - Dynamic rendering with **EJS templates**a
 - Simple and clean **CSS3 design**
+- (New) Edit a Journal (title + content)
 
 ---
 
@@ -69,8 +70,6 @@ This project is built using **Node.js**, **Express.js**, **EJS**, and **CSS3**.
 ## 💡 Future Improvements
 
 - Add user authentication
-
-- Edit posts
 
 - Database integration for saving posts permanently
 
