@@ -29,14 +29,14 @@ This project is built using **Node.js**, **Express.js**, **EJS**, and **CSS3**.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/my-journal-blog-site.git
+   git clone https://github.com/your-username/journal-blog-site.git
 
    ```
 
 2. Navigate into the project folder:
 
    ```bash
-   cd my-journal-blog-site
+   cd journal-blog-site
 
    ```
 
